@@ -1,0 +1,13 @@
+{
+  "apiUrl": "${PERMISSION_API_PUBLIC_URL}",
+  "token": "${ERP_DOCS_SYNC_TOKEN}",
+  "envFile": ".env.erp-docs",
+  "collectionId": "<from planner>",
+  "root": "docs/",
+  "include": [
+    "docs/**"
+  ],
+  "exclude": [
+    "docs/internal/**"
+  ]
+}

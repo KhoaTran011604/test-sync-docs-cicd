@@ -1,0 +1,13 @@
+{
+  "apiUrl": "${PERMISSION_API_PUBLIC_URL}",
+  "token": "${ERP_DOCS_SYNC_TOKEN}",
+  "envFile": ".env.erp-docs",
+  "collectionId": "e1e40e1e-62fc-441d-bba5-083c18c3a839",
+  "root": "docs/",
+  "include": [
+    "docs/**"
+  ],
+  "exclude": [
+    "docs/internal/**"
+  ]
+}
