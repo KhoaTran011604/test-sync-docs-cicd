@@ -5,7 +5,8 @@
   "collectionId": "<from planner>",
   "root": "docs/",
   "include": [
-    "docs/**"
+    "docs/**",
+    "plans/**"
   ],
   "exclude": [
     "docs/internal/**"

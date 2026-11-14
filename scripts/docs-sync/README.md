@@ -43,7 +43,8 @@ Edit `.erp-docs.config.json` in your repository root:
   "collectionId": "<YOUR_COLLECTION_UUID>",
   "root": "docs/",
   "include": [
-    "docs/**"
+    "docs/**",
+    "plans/**"
   ],
   "exclude": [
     "docs/internal/**"
@@ -51,6 +52,7 @@ Edit `.erp-docs.config.json` in your repository root:
 }
 ```
 > **Important**: Keep `"${PERMISSION_API_PUBLIC_URL}"` and `"${ERP_DOCS_SYNC_TOKEN}"` as literal placeholder strings. Do not paste real tokens into this JSON file.
+> `include` selects the source paths to sync. `root` strips only its matching prefix from paths in Outline: `docs/` contents appear at the collection root, while `plans/` remains a `plans/` folder.
 
 ---
 
@@ -84,6 +86,7 @@ on:
       - main  # or dev, master
     paths:
       - 'docs/**'
+      - 'plans/**'
       - '.erp-docs.config.json'
       - 'scripts/docs-sync/**'
   workflow_dispatch:
@@ -119,6 +122,7 @@ docs-sync:
     - if: '$CI_COMMIT_BRANCH == "main"'
       changes:
         - 'docs/**/*'
+        - 'plans/**/*'
         - '.erp-docs.config.json'
         - 'scripts/docs-sync/**/*'
   variables:
